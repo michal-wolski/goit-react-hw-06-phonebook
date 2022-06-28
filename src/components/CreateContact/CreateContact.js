@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+import { createContact } from '../Store/Actions';
 
 const CreateContact = ({ nameId, numberId, onSubmitCreateContact }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+  const dispatch = useDispatch();
+  const value = useSelector(state => state.contacts);
 
   const handleChangeNameInput = eve => {
     setName(eve.currentTarget.value);
@@ -16,6 +20,7 @@ const CreateContact = ({ nameId, numberId, onSubmitCreateContact }) => {
   const onSubmitForm = eve => {
     eve.preventDefault();
     onSubmitCreateContact({ name, number });
+    dispatch(createContact(eve.currentTarget));
     resetForm();
   };
 
