@@ -1,3 +1,9 @@
-import { createAction } from '@reduxjs/toolkit';
+const ACTION_TYPES = {
+  LOAD_PREVIOUS_CONTACTS: 'LOAD_PREVIOUS_CONTACTS',
+  SAVE_CONTACT: 'SAVE_CONTACT',
+  DELETE_CONTACT: 'DELETE_CONTACT',
+  TOGGLE_NOTIFICATION: 'TOGGLE_NOTIFICATION',
+  CHANGE_FILTER: 'CHANGE_FILTER',
+};
 
-export const createContact = createAction('store/CREATE_CONTACT');
+export default ACTION_TYPES;
