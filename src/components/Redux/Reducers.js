@@ -1,7 +1,6 @@
 import { combineReducers, createReducer } from '@reduxjs/toolkit';
 import { changeFilter, addContacts, deleteContacts } from './Actions';
 import defaultContacts from 'components/base/DefaultContacts';
-import { initialState } from './Constants';
 
 const contactsReducer = createReducer(
   JSON.parse(window.localStorage.getItem('contacts')) ?? defaultContacts,
